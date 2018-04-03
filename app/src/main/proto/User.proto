@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+service User {
+    rpc SmsCode (SmsCodeInput) returns (SmsCodeOutput) {
+    }
+    rpc StreamSmsCode (SmsCodeInput) returns (stream SmsCodeOutput) {
+    }
+}
+
+message SmsCodeInput {
+    string Phone = 2;
+}
+message SmsCodeOutput {
+    string VerificationCode = 2;
+}
